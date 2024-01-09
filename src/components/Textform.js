@@ -5,7 +5,7 @@ export default function Textform(props) {
   const [text, setText] = useState("");
 
   let wordCount = text.split(" ").length;
-  if (text == "") {
+  if (text === '') {
     wordCount = 0;
   }
 
