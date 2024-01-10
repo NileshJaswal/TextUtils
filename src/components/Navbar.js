@@ -32,7 +32,7 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
-          <input onClick={props.toggleStyle} type="checkbox" className="btn-check" id="btn-check"/>
+          <input onClick={props.toggleStyle} type="checkbox" className="btn-check" id="btn-check" />
           <label className="btn btn-dark" htmlFor="btn-check">
             {props.buttonText}
           </label>

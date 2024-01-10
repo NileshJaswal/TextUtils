@@ -14,16 +14,20 @@ export default function Textform(props) {
     setText(event.target.value);
   };
 
-  //convert to uppercase on click
+ //Uppercase
   const HandleUpClick = () => {
     // console.log("up was Clicked on" + text);
     let newText = text.toUpperCase();
     setText(newText);
   };
+
+  // Lowercase
   const HandleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
   };
+
+  // Capitalize Words
   const capitalizeText = () => {
     const words = text.split(' '); // Split text into an array of words
     const capitalizedWords = words.map(word => {
@@ -32,12 +36,30 @@ export default function Textform(props) {
     const capitalizedText = capitalizedWords.join(' '); // Join the words back into a string
     setText(capitalizedText);
   };
+
+  // Capitalize Sentence
   const capitalizeSentence = () => {
     const words = text.toLowerCase().split(' ');
     words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1);
     const capitalizedText = words.join(' ');
     setText(capitalizedText);
   };
+
+  // Copy Text
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(text)
+    props.showAlert('Text is Copied to Clipboard!', "success");
+      /* .then(() => {
+        // Handle successful copy
+        alert('Text copied to clipboard!');
+      })
+      .catch((error) => {
+        // Handle error
+        console.error('Could not copy text: ', error);
+      }); */
+  };
+
+  // Clear Text
   const clearText = () => {
     let newText = "";
     setText(newText);
@@ -56,7 +78,7 @@ export default function Textform(props) {
             value={text}
           />
         </div>
-        <div className="d-flex gap-2">
+        <div className="d-flex flex-column flex-md-row gap-2">
           <button onClick={HandleUpClick} type="button" className="btn btn-primary">
             Convert to Uppercase
           </button>
@@ -68,6 +90,9 @@ export default function Textform(props) {
           </button>
           <button onClick={capitalizeSentence} type="button" className="btn btn-primary">
             Capitalize Sentence
+          </button>
+          <button onClick={handleCopyClick} type="button" className="btn btn-primary">
+            Copy Text
           </button>
           <button onClick={clearText} type="button" className="btn btn-danger">
             Clear Text
