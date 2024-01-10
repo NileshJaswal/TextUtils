@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function Navbar(props) {
   return (
-    <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+    <nav className={`navbar navbar-${props.darkMode} bg-${props.darkMode} navbar-expand-lg`}>
       <div className="container">
         <a className="navbar-brand" href="/">
           {props.title}
@@ -32,9 +32,9 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
-          <input type="checkbox" className="btn-check" id="btn-check" />
+          <input onClick={props.toggleStyle} type="checkbox" className="btn-check" id="btn-check"/>
           <label className="btn btn-dark" htmlFor="btn-check">
-            Enable Dark Mode
+            {props.buttonText}
           </label>
           {/* <form className="d-flex" role="search">
           <input

@@ -1,5 +1,5 @@
 import React from "react";
-export default function About(props) {
+export default function About() {
   return (
     <div className="container">
       <h3 className="my-3">About Us</h3>
@@ -54,9 +54,6 @@ export default function About(props) {
           </div>
         </div>
       </div>
-      <button onClick={props.toggleStyle} type="button" className="btn btn-light">
-        {props.buttonText}
-      </button>
     </div>
   );
 }
