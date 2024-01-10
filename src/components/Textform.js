@@ -67,7 +67,7 @@ export default function Textform(props) {
 
   return (
     <>
-      <div className="container mt-5">
+      <div className="container p-0 mt-5">
         <h1 className="">{props.heading}</h1>
         <div className="mb-3">
           <textarea

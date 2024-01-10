@@ -15,6 +15,9 @@ const App = () => {
       msg: message,
       type: type
     })
+    setTimeout(() => {
+      setAlert(null)
+    }, 2000);
   }
 
   const toggleStyle = () => {
@@ -22,13 +25,13 @@ const App = () => {
     if (darkMode === "dark") {
       setdarkMode("light");
       setButtonText("Dark Mode");
-      showAlert('Dark Mode Disabled!', "success");
+      showAlert('Dark mode has been Disabled!', "success");
     } 
     
     else if (darkMode === "light") {
       setdarkMode("dark");
       setButtonText("Light Mode");
-      showAlert('Dark Mode Enabled!', "success");
+      showAlert('Dark mode has been Enabled!', "success");
     }
 
   };
