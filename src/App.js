@@ -26,12 +26,14 @@ const App = () => {
       setdarkMode("light");
       setButtonText("Dark Mode");
       showAlert('Dark mode has been Disabled!', "success");
+      document.title = "TextUtils";
     } 
     
     else if (darkMode === "light") {
       setdarkMode("dark");
       setButtonText("Light Mode");
       showAlert('Dark mode has been Enabled!', "success");
+      document.title = "TextUtils - Dark";
     }
 
   };
