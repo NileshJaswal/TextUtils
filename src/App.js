@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
 import Alert from "./components/Alert";
-// import About from "./components/About";
-// import { BrowserRouter as Router, Routes , Route } from "react-router-dom";
+import About from "./components/About";
+import { BrowserRouter as Router, Routes , Route } from "react-router-dom";
 
 const App = () => {
   const [darkMode, setdarkMode] = useState("light");
@@ -35,19 +35,18 @@ const App = () => {
     }
   };
   return (
-   /*  <Router> */
+    <Router>
       <div className={`main vh-100 bg-${darkMode} text-${darkMode === "light" ? "dark" : "light"}`} data-bs-theme={darkMode}>
         <Navbar title="TextUtils" about="About" darkMode={darkMode} buttonText={buttonText} setButtonText={setButtonText} toggleStyle={toggleStyle} />
         <Alert alert={alert} />
         <div className="container">
-        <Textform showAlert={showAlert} heading="Enter your Text to Analyse" />
-          {/* <Routes>
+          <Routes>
             <Route exact path="/" element={<Textform showAlert={showAlert} heading="Enter your Text to Analyse" />}/>
             <Route exact path="/about" element={<About />}/>
-          </Routes> */}
+          </Routes>
         </div>
       </div>
-    /* </Router> */
+    </Router>
   );
 };
 
