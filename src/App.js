@@ -42,6 +42,7 @@ const App = () => {
         <div className="container">
           <Routes>
             <Route exact path="/" element={<Textform showAlert={showAlert} heading="Enter your Text to Analyse" />}/>
+            <Route exact path="/TextUtils" element={<Textform showAlert={showAlert} heading="Enter your Text to Analyse" />}/>
             <Route exact path="/about" element={<About />}/>
           </Routes>
         </div>
