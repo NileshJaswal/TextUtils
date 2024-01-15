@@ -4,7 +4,7 @@ export default function Textform(props) {
   //Text is a variable where we storing the value and set text iws the variable which we will use to update the value text
   const [text, setText] = useState("");
 
-  let wordCount = text.split(" ").filter((element)=>{return element.length!=0}).length;
+  let wordCount = text.split(" ").filter((element)=>{return element.length!==0}).length;
 
 
   // Update the text on manually changing the text area value onchange listn
@@ -78,7 +78,7 @@ export default function Textform(props) {
           <div className="col-md-6">
             <div className="mb-3 copy-reset mt-4">
               <button onClick={handleCopyClick} type="button" className="me-2 btn btn-light">
-                <i class="bi bi-copy"></i>
+                <i className="bi bi-copy"></i>
               </button>
               <button onClick={clearText} type="button" className="btn btn-danger">
                 Reset
@@ -100,13 +100,13 @@ export default function Textform(props) {
             </div>
           </div>
           <div className="col-md-6">
-            <div class="mb-3 row m-0 align-items-center gap-4 word-count mt-4">
+            <div className="mb-3 row m-0 align-items-center gap-4 word-count mt-4">
               <div className="row m-0 col-md-2 col-5 p-0 align-items-center">
                 <div className="col-5 p-0">
-                  <input value={wordCount} type="email" class="form-control" id="exampleFormControlInput1" />
+                  <input value={wordCount} type="email" className="form-control" id="exampleFormControlInput1" onChange={null}/>
                 </div>
                 <div className="col-7">
-                  <label for="exampleFormControlInput1" class="form-label m-0">
+                  <label htmlFor="exampleFormControlInput1" className="form-label m-0">
                     Words
                   </label>
                 </div>
@@ -114,10 +114,10 @@ export default function Textform(props) {
 
               <div className="row m-0 col-md-2 col-5 p-0 align-items-center">
                 <div className="col-5 p-0">
-                  <input value={text.length} type="email" class="form-control" id="exampleFormControlInput1" />
+                  <input value={text.length} type="email" className="form-control" id="exampleFormControlInput1" onChange={null}/>
                 </div>
                 <div className="col-7">
-                  <label for="exampleFormControlInput1" class="form-label m-0">
+                  <label htmlFor="exampleFormControlInput1" className="form-label m-0">
                     Characters
                   </label>
                 </div>
