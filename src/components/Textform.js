@@ -111,7 +111,7 @@ export default function Textform(props) {
             <div className="mb-3 row m-0 align-items-center gap-4 word-count mt-4">
               <div className="row m-0 col-md-2 col-5 p-0 align-items-center">
                 <div className="col-5 p-0">
-                  <input value={wordCount} type="email" className="form-control" id="exampleFormControlInput1" onChange={HandleOnChange} />
+                  <input value={wordCount} type="email" className="form-control" id="exampleFormControlInput1" onChange={HandleOnChange} readOnly  />
                 </div>
                 <div className="col-7">
                   <label htmlFor="exampleFormControlInput1" className="form-label m-0">
@@ -122,7 +122,7 @@ export default function Textform(props) {
 
               <div className="row m-0 col-md-2 col-5 p-0 align-items-center">
                 <div className="col-5 p-0">
-                  <input value={text.length} type="email" className="form-control" id="exampleFormControlInput1" onChange={HandleOnChange} />
+                  <input value={text.length} type="email" className="form-control" id="exampleFormControlInput1" onChange={HandleOnChange} readOnly  />
                 </div>
                 <div className="col-7">
                   <label htmlFor="exampleFormControlInput1" className="form-label m-0">
