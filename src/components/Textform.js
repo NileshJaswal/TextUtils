@@ -4,10 +4,8 @@ export default function Textform(props) {
   //Text is a variable where we storing the value and set text iws the variable which we will use to update the value text
   const [text, setText] = useState("");
 
-  let wordCount = text.split(" ").length;
-  if (text === "") {
-    wordCount = 0;
-  }
+  let wordCount = text.split(" ").filter((element)=>{return element.length!=0}).length;
+
 
   // Update the text on manually changing the text area value onchange listn
   const HandleOnChange = (event) => {
@@ -71,7 +69,7 @@ export default function Textform(props) {
         <div className="mb-3 row">
           <div className="col-md-6">
             <h4 className="">{props.heading}</h4>
-            <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" onChange={HandleOnChange} value={text} />
+            <textarea className="form-control" id="exampleFormControlTextarea1" rows="4" onChange={HandleOnChange} value={text} />
           </div>
           <div className="col-md-6 mt-md-0 mt-4 d-flex flex-column">
             <h4>Preview</h4>

@@ -30,17 +30,17 @@ const App = () => {
       document.title = "TextUtils";
     } else if (darkMode === "white") {
       setdarkMode("dark");
-      setButtonText("white Mode");
+      setButtonText("Light Mode");
       showAlert("Dark mode has been Enabled!", "success");
       document.title = "TextUtils - Dark";
     }
   };
   return (
     <Router>
-      <div className={`main py-5 bg-${darkMode} text-${darkMode === "white" ? "dark" : "white"}`} data-bs-theme={darkMode}>
+      <div className={`main bg-${darkMode} text-${darkMode === "white" ? "dark" : "white"}`} data-bs-theme={darkMode}>
         <Navbar title="TextUtils" about="About" darkMode={darkMode} buttonText={buttonText} setButtonText={setButtonText} toggleStyle={toggleStyle} />
         <Alert alert={alert} />
-        <div className="container">
+        <div className="container vh-100">
           <Routes>
             <Route exact path="/" element={<Textform showAlert={showAlert} heading="Input Text" />}/>
             <Route exact path="/TextUtils" element={<Textform showAlert={showAlert} heading="Input Text" />}/>
