@@ -4,8 +4,12 @@ export default function Textform(props) {
   //Text is a variable where we storing the value and set text iws the variable which we will use to update the value text
   const [text, setText] = useState("");
 
-  let wordCount = text.split(" ").filter((element)=>{return element.length!==0}).length;
+  let wordCount = text.split(" ").filter((element) => {
+    return element.length !== 0;
+  }).length;
 
+
+  const notEmpty = () => wordCount !== 0;
 
   // Update the text on manually changing the text area value onchange listn
   const HandleOnChange = (event) => {
@@ -71,10 +75,14 @@ export default function Textform(props) {
             <h4 className="">{props.heading}</h4>
             <textarea className="form-control" id="exampleFormControlTextarea1" rows="4" onChange={HandleOnChange} value={text} />
           </div>
-          <div className="col-md-6 mt-md-0 mt-4 d-flex flex-column">
-            <h4>Preview</h4>
-            <p id="preview" className="border h-100 mb-0 rounded p-2">{text}</p>
-          </div>
+          {notEmpty() && (
+            <div className="col-md-6 mt-md-0 mt-4 d-flex flex-column">
+              <h4>Preview</h4>
+              <p id="preview" className="border h-100 mb-0 rounded p-2">
+                {text}
+              </p>
+            </div>
+          )}
           <div className="col-md-6">
             <div className="mb-3 copy-reset mt-4">
               <button onClick={handleCopyClick} type="button" className="me-2 btn btn-light">
@@ -103,7 +111,7 @@ export default function Textform(props) {
             <div className="mb-3 row m-0 align-items-center gap-4 word-count mt-4">
               <div className="row m-0 col-md-2 col-5 p-0 align-items-center">
                 <div className="col-5 p-0">
-                  <input value={wordCount} type="email" className="form-control" id="exampleFormControlInput1" onChange={null}/>
+                  <input value={wordCount} type="email" className="form-control" id="exampleFormControlInput1" onChange={HandleOnChange} />
                 </div>
                 <div className="col-7">
                   <label htmlFor="exampleFormControlInput1" className="form-label m-0">
@@ -114,7 +122,7 @@ export default function Textform(props) {
 
               <div className="row m-0 col-md-2 col-5 p-0 align-items-center">
                 <div className="col-5 p-0">
-                  <input value={text.length} type="email" className="form-control" id="exampleFormControlInput1" onChange={null}/>
+                  <input value={text.length} type="email" className="form-control" id="exampleFormControlInput1" onChange={HandleOnChange} />
                 </div>
                 <div className="col-7">
                   <label htmlFor="exampleFormControlInput1" className="form-label m-0">
