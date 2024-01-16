@@ -4,7 +4,7 @@ export default function Textform(props) {
   //Text is a variable where we storing the value and set text iws the variable which we will use to update the value text
   const [text, setText] = useState("");
 
-  let wordCount = text.split(" ").filter((element) => {
+  let wordCount = text.split(/\s+/).filter((element) => {
     return element.length !== 0;
   }).length;
 
