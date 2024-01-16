@@ -75,34 +75,34 @@ export default function Textform(props) {
             <h4 className="">{props.heading}</h4>
             <textarea className="form-control" id="exampleFormControlTextarea1" rows="4" onChange={HandleOnChange} value={text} />
           </div>
-          {notEmpty() && (
+         
             <div className="col-md-6 mt-md-0 mt-4 d-flex flex-column">
               <h4>Preview</h4>
               <p id="preview" className="border h-100 mb-0 rounded p-2">
-                {text}
+                {text.length>0?text:'Enter Something to Preview!'}
               </p>
             </div>
-          )}
+        
           <div className="col-md-6">
             <div className="mb-3 copy-reset mt-4">
-              <button onClick={handleCopyClick} type="button" className="me-2 btn btn-light">
+              <button disabled={text.length===0} onClick={handleCopyClick} type="button" className="me-2 btn btn-light">
                 <i className="bi bi-copy"></i>
               </button>
-              <button onClick={clearText} type="button" className="btn btn-danger">
+              <button disabled={text.length===0} onClick={clearText} type="button" className="btn btn-danger">
                 Reset
               </button>
             </div>
             <div className="d-flex flex-wrap gap-2 buttons">
-              <button onClick={HandleUpClick} type="button" className="btn btn-secondary">
+              <button disabled={text.length===0} onClick={HandleUpClick} type="button" className="btn btn-secondary">
                 Uppercase
               </button>
-              <button onClick={HandleLoClick} type="button" className="btn btn-secondary">
+              <button disabled={text.length===0} onClick={HandleLoClick} type="button" className="btn btn-secondary">
                 Lowercase
               </button>
-              <button onClick={capitalizeText} type="button" className="btn btn-secondary">
+              <button disabled={text.length===0} onClick={capitalizeText} type="button" className="btn btn-secondary">
                 Capitalize Words
               </button>
-              <button onClick={capitalizeSentence} type="button" className="btn btn-secondary">
+              <button disabled={text.length===0} onClick={capitalizeSentence} type="button" className="btn btn-secondary">
                 Capitalize Sentence
               </button>
             </div>
